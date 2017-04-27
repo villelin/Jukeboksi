@@ -1,3 +1,4 @@
+package blockbusters.jukeboksi;
 
 public class Main {
 	

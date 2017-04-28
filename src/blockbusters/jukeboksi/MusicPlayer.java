@@ -196,8 +196,8 @@ public class MusicPlayer extends Thread
 	public void decVolume()
 	{
 		volume -= 10;
-		if (volume < 10)
-			volume = 10;
+		if (volume < 0)
+			volume = 0;
 		Sound.setVolume(volume);
 	}
 	

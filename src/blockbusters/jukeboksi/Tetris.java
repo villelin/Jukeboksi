@@ -54,6 +54,6 @@ public class Tetris extends MusicTrack
 	
 	public int[] getNote()
 	{
-		return notedata[current_note];
+		return notedata[current_note % notedata.length];
 	}
 }

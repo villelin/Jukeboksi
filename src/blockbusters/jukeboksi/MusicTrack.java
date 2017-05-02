@@ -2,16 +2,35 @@ package blockbusters.jukeboksi;
 
 public abstract class MusicTrack
 {
+	protected static final int C3 = 131;
+	protected static final int CS3 = 139;
+	protected static final int D3 = 147;
+	protected static final int DS3 = 156;
+	protected static final int E3 = 165;
+	protected static final int F3 = 175;
+	protected static final int FS3 = 185;
+	protected static final int G3 = 196;
+	protected static final int GS3 = 208;
+	protected static final int A3 = 220;
 	protected static final int AS3 = 233;
+	protected static final int B3 = 247;
 	protected static final int C4 = 261;
+	protected static final int CS4 = 277;
 	protected static final int D4 = 293;
+	protected static final int DS4 = 311;
 	protected static final int E4 = 329;
 	protected static final int F4 = 349;
+	protected static final int FS4 = 370;
 	protected static final int G4 = 392;
+	protected static final int GS4 = 415;
 	protected static final int A4 = 440;
+	protected static final int AS4 = 466;
 	protected static final int B4 = 493;
 	protected static final int C5 = 523;
+	protected static final int CS5 = 554;
+	protected static final int D5 = 587;
 	protected static final int DS5 = 622;
+	protected static final int E5 = 659;
 	protected static final int F5 = 698;
 	protected static final int FS5 = 739;
 	protected static final int G5 = 784;
@@ -30,6 +49,7 @@ public abstract class MusicTrack
 	protected static final int GS6 = 1661;
 	protected static final int A6 = 1760;
 	protected static final int AS6 = 1864;
+	protected static final int C7 = 2093;
 	
 	protected int current_note;
 	protected String song_name;

@@ -13,6 +13,13 @@ public class MusicPlayer extends Thread
 	private int musicnum;
 	private int nextmusic;
 	
+	private MusicTrack current_music;
+	
+	public MusicPlayer()
+	{
+		current_music = null;
+	}
+	
 	public void stop_playing()
 	{
 		running = false;
@@ -42,6 +49,22 @@ public class MusicPlayer extends Thread
 		Sound.setVolume(volume);
 	}
 	
+	public String getSongName()
+	{
+		if (current_music != null)
+			return current_music.getSongName();
+		else
+			return "";
+	}
+	
+	public String getArtistName()
+	{
+		if (current_music != null)
+			return current_music.getArtistName();
+		else
+			return "";
+	}
+	
 	public void run()
 	{
 		music = new MusicTrack[5];
@@ -51,8 +74,6 @@ public class MusicPlayer extends Thread
 		music[3] = new EpicSax();
 		music[4] = new Trololol();
 		
-		MusicTrack current_music = null;
-		
 		volume = 10;
 		Sound.setVolume(10);
 		
@@ -60,8 +81,6 @@ public class MusicPlayer extends Thread
 		
 		musicnum = 0;
 		nextmusic = 0;
-		
-		current_music = music[0];
 		
 		while (running)
 		{

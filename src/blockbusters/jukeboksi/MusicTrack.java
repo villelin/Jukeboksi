@@ -22,10 +22,14 @@ public abstract class MusicTrack
 	protected static final int C6 = 1046;
 	protected static final int CS6 = 1108;
 	protected static final int D6 = 1174;
+	protected static final int DS6 = 1244;
 	protected static final int E6 = 1318;
 	protected static final int F6 = 1397;
+	protected static final int FS6 = 1480;
 	protected static final int G6 = 1567;
+	protected static final int GS6 = 1661;
 	protected static final int A6 = 1760;
+	protected static final int AS6 = 1864;
 	
 	protected int current_note;
 	

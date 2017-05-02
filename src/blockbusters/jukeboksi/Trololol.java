@@ -40,6 +40,12 @@ public class Trololol extends MusicTrack
 		{C5,	(BEAT*4)-5,	BEAT*12},
 	};
 	
+	public Trololol()
+	{
+		song_name = "I am very glad, as I'm\nfinally returning back home";
+		artist_name = "Eduard Khil";
+	}
+	
 	public int[] getNote()
 	{
 		return notedata[current_note % notedata.length];

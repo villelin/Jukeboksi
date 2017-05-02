@@ -32,10 +32,14 @@ public abstract class MusicTrack
 	protected static final int AS6 = 1864;
 	
 	protected int current_note;
+	protected String song_name;
+	protected String artist_name;
 	
 	public MusicTrack()
 	{
 		current_note = 0;
+		song_name = "Unknown Track";
+		artist_name = "Unknown Artist";
 	}
 	
 	public abstract int[] getNote();
@@ -48,5 +52,15 @@ public abstract class MusicTrack
 	public void restart()
 	{
 		current_note = 0;
+	}
+	
+	public String getSongName()
+	{
+		return song_name;
+	}
+	
+	public String getArtistName()
+	{
+		return artist_name;
 	}
 };

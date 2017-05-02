@@ -25,6 +25,12 @@ public class JohnCena extends MusicTrack
 		{C4,	BEAT-5,		BEAT*3},
 	};
 	
+	public JohnCena()
+	{
+		song_name = "The time is now";
+		artist_name = "John Cena";
+	}
+	
 	public int[] getNote()
 	{
 		return notedata[current_note % notedata.length];

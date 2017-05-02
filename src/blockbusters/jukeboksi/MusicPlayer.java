@@ -44,11 +44,12 @@ public class MusicPlayer extends Thread
 	
 	public void run()
 	{
-		music = new MusicTrack[4];
-		music[0] = new Tetris();
-		music[1] = new JohnCena();
-		music[2] = new EpicSax();
-		music[3] = new Trololol();
+		music = new MusicTrack[5];
+		music[0] = new Zelda();
+		music[1] = new Tetris();
+		music[2] = new JohnCena();
+		music[3] = new EpicSax();
+		music[4] = new Trololol();
 		
 		MusicTrack current_music = null;
 		
@@ -66,7 +67,7 @@ public class MusicPlayer extends Thread
 		{
 			if (nextmusic != musicnum)
 			{
-				if (nextmusic >= 0 && nextmusic <= 3)
+				if (nextmusic >= 0 && nextmusic <= 4)
 				{
 					current_music = music[nextmusic];
 					current_music.restart();

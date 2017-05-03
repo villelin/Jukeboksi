@@ -51,7 +51,8 @@ public class DiscReader {
 				song = -1;
 				break;
 		}
-
-		return 0;
+		
+		return song;
+		
 	}	
 }

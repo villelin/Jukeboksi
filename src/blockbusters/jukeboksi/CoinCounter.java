@@ -1,5 +1,5 @@
 package blockbusters.jukeboksi;
-
+	
 import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.robotics.Color;
 
@@ -43,7 +43,7 @@ public class CoinCounter extends Thread {
 		while (true) {
 			
 			int lul = coinReader.getColorID();
-			if (lul != 1) {
+			if (lul != Color.GREEN) {
 				credits++;
 				coins++;
 			} 

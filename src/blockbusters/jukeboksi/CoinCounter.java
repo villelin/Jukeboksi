@@ -1,6 +1,5 @@
 package blockbusters.jukeboksi;
 
-import java.awt.Color;
 
 public class CoinCounter extends Thread {
 	

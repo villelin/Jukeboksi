@@ -9,7 +9,8 @@ import lejos.hardware.sensor.EV3IRSensor;
 import lejos.utility.Delay;
 
 /**
- * Jukeboksi toimii viestinv‰litt‰j‰n‰ ja yhdist‰‰ muut luokat. 
+ * Jukeboksi toimii viestinv‰litt‰j‰n‰ ja yhdist‰‰ muut luokat.
+ * 
  * @author Joona Ikonen
  * @version 0.5
  */
@@ -27,17 +28,15 @@ public class JukeBoksi {
 	public static String songName;
 	public static int coinCount;
 	public static int creditCount;
-	
+
 	private Screen screen;
 	private Remote remote;
 	private MusicPlayer music;
 	private CoinCounter coin;
 	private DiscReader discPlayer;
 	private Drive driver;
-	
-	
-	
-	public JukeBoksi(){
+
+	public JukeBoksi() {
 		screen = new Screen();
 		remote = new Remote(irSensor);
 		music = new MusicPlayer();
@@ -82,35 +81,35 @@ public class JukeBoksi {
 				screen.showPage(9);
 				break;
 			case 5: // LEFT-Button
-				/* if(music.isPlaying()){
-				 * break;
-				 * }
-				 * else{
-				 * discPlayer.lastTrack(); 
-				 * music.changeSong(discPlayer.getSongID();
-				 * creditCount = coin.getCredits();
-				 * artistName = music.getArtistName();
-				 * songName = music.getSongName(); 
-				 * screen.showPage(1);
-				 * break;
-				 * }
-				 * 
-				 */
+				 if(music.isPlaying()){
+				 break;
+				 }
+				 else{
+				 discPlayer.lastSong(); 
+				 music.changeSong(discPlayer.getSongID());
+				 creditCount = coin.getCredits();
+				 artistName = music.getArtistName();
+				 songName = music.getSongName(); 
+				 screen.showPage(1);
+				 break;
+				 }
+				 
+				 
 			case 6: // RIGHT-Button
-				/* if(music.isPlaying()){
-				 * break;
-				 * }
-				 * else{
-				 * discPlayer.nextTrack();
-				 * music.changeSong(discPlayer.getSongID();
-				 * creditCount = coin.getCredits();
-				 * artistName = music.getArtistName();
-				 * songName = music.getSongName(); 
-				 * screen.showPage(1);
-				 * break;
-				 * }
-				 * 
-				 */
+				if(music.isPlaying()){
+				break;
+				}
+				else{
+				discPlayer.nextSong();
+				music.changeSong(discPlayer.getSongID());
+				creditCount = coin.getCredits();
+				artistName = music.getArtistName();
+				songName = music.getSongName(); 
+				screen.showPage(1);
+				break;
+				}
+				
+				
 			case 7: // UP-Button
 				music.incVolume();
 				break;
@@ -136,6 +135,12 @@ public class JukeBoksi {
 			}
 			Delay.msDelay(50);
 		}
+		
+		music.interrupt();
+		coin.interrupt();
+		remote.interrupt();
+		//driver.interrupt();
+		
 		try {
 			music.join();
 			coin.join();
@@ -145,10 +150,7 @@ public class JukeBoksi {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		music.interrupt();
-		coin.interrupt();
-		remote.interrupt();
-		//driver.interrupt();
+
 		
 		irSensor.close();
 		discMotor.close();

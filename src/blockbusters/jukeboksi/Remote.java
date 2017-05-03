@@ -8,7 +8,9 @@ public class Remote extends Thread {
 
 	private EV3IRSensor infraredSensor;
 	private int remoteCommand = 0;
+	private int remoteDrive = 0;
 	private int remotelast = 0;
+	private int remoteDriveLast = 0;
 
 	public Remote(EV3IRSensor sensor) {
 		this.infraredSensor = sensor;
@@ -17,6 +19,11 @@ public class Remote extends Thread {
 	public int getRemoteCommand() {
 
 		return remotelast;
+	}
+	
+	public int getRemoteDrive(){
+		
+		return remoteDriveLast;
 	}
 
 	public void run() {
@@ -73,6 +80,29 @@ public class Remote extends Thread {
 					break;
 				}
 
+			}
+			remoteDrive = infraredSensor.getRemoteCommand(3);
+			switch (remoteDrive){
+			case 1: //leftTop
+				remoteDriveLast = 1;
+				break;
+			case 2: //leftBottom
+				remoteDriveLast = 2;
+				break;
+			case 3: //rightTop
+				remoteDriveLast = 3;
+				break;
+			case 4: //rightBottom
+				remoteDriveLast = 4;
+				break;
+			case 5: //topLeft + topRight
+				remoteDriveLast = 5;
+				break;
+			case 8: //bottomLeft + bottomRight
+				remoteDriveLast = 6;
+			default:
+				remoteDriveLast = 0;
+				break;
 			}
 		}
 

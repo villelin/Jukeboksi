@@ -8,6 +8,12 @@ import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.hardware.sensor.EV3IRSensor;
 import lejos.utility.Delay;
 
+/**
+ * Jukeboksi toimii viestinv‰litt‰j‰n‰ ja yhdist‰‰ muut luokat. 
+ * @author Joona Ikonen
+ * @version 0.5
+ */
+
 public class JukeBoksi {
 
 	EV3IRSensor irSensor = new EV3IRSensor(SensorPort.S3);
@@ -105,18 +111,14 @@ public class JukeBoksi {
 				 * }
 				 * 
 				 */
-			case 7:
+			case 7: // UP-Button
 				music.incVolume();
 				break;
-			case 8:
+			case 8: // DOWN-button
 				music.decVolume();
 				break;
-			case 9:
-				/*
-				 * Enter-n‰pp‰in Biisin aloitus, jos krediittej‰ on 
-				 * Tanssi? Mik‰ metodi?
-				 * 
-				 */
+			case 9: // ENTER-button
+				
 				if(coin.useCredits()){
 					music.startPlaying();
 					creditCount = coin.getCredits();
@@ -134,6 +136,28 @@ public class JukeBoksi {
 			}
 			Delay.msDelay(50);
 		}
+		try {
+			music.join();
+			coin.join();
+			remote.join();
+			//driver.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		music.interrupt();
+		coin.interrupt();
+		remote.interrupt();
+		//driver.interrupt();
+		
+		irSensor.close();
+		discMotor.close();
+		discReader.close();
+		coinSensor.close();
+		leftMotor.close();
+		rightMotor.close();
+		
+		
 
 	}
 }

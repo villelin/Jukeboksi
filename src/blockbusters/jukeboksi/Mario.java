@@ -1,7 +1,7 @@
 package blockbusters.jukeboksi;
 
 public class Mario extends MusicTrack {
-	private static final int BEAT = 90;	// biitin pituus = 90 ms
+	private static final int BEAT = 80;	// biitin pituus = 80 ms
 	
 	public static int[][] notedata =
 	{

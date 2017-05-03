@@ -1,6 +1,5 @@
 package blockbusters.jukeboksi;
 
-
 import lejos.hardware.Sound;
 
 public class MusicPlayer extends Thread
@@ -67,15 +66,18 @@ public class MusicPlayer extends Thread
 	
 	public void run()
 	{
-		music = new MusicTrack[5];
-		music[0] = new Zelda();
-		music[1] = new Tetris();
-		music[2] = new JohnCena();
-		music[3] = new EpicSax();
-		music[4] = new Trololol();
+		music = new MusicTrack[6];
+		music[0] = new Mario();
+		music[1] = new Zelda();
+		music[2] = new Tetris();
+		music[3] = new JohnCena();
+		music[4] = new EpicSax();
+		music[5] = new Trololol();
 		
 		volume = 10;
 		Sound.setVolume(10);
+		
+		current_music = music[0];
 		
 		running = true;
 		
@@ -86,7 +88,7 @@ public class MusicPlayer extends Thread
 		{
 			if (nextmusic != musicnum)
 			{
-				if (nextmusic >= 0 && nextmusic <= 4)
+				if (nextmusic >= 0 && nextmusic < music.length)
 				{
 					current_music = music[nextmusic];
 					current_music.restart();

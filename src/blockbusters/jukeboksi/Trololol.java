@@ -44,10 +44,7 @@ public class Trololol extends MusicTrack
 	{
 		song_name = "I am very glad, as I'm\nfinally returning back home";
 		artist_name = "Eduard Khil";
-	}
-	
-	public int[] getNote()
-	{
-		return notedata[current_note % notedata.length];
+		num_loops = 3;
+		notes = notedata;
 	}
 }

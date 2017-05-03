@@ -34,10 +34,7 @@ public class EpicSax extends MusicTrack
 	{
 		song_name = "Epic Sax Guy";
 		artist_name = "Sergey Stepanov";
-	}
-	
-	public int[] getNote()
-	{
-		return notedata[current_note % notedata.length];
+		num_loops = 6;
+		notes = notedata;
 	}
 }

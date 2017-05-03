@@ -139,10 +139,7 @@ public class Mario extends MusicTrack {
 	{
 		song_name = "Theme";
 		artist_name = "Super Mario Bros";
-	}
-	
-	public int[] getNote()
-	{
-		return notedata[current_note % notedata.length];
+		num_loops = 1;
+		notes = notedata;
 	}
 }

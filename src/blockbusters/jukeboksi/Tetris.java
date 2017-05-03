@@ -56,10 +56,7 @@ public class Tetris extends MusicTrack
 	{
 		song_name = "Korobeiniki";
 		artist_name = "Russian Folk Song";
-	}
-	
-	public int[] getNote()
-	{
-		return notedata[current_note % notedata.length];
+		num_loops = 2;
+		notes = notedata;
 	}
 }

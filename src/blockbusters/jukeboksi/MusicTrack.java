@@ -54,15 +54,23 @@ public abstract class MusicTrack
 	protected int current_note;
 	protected String song_name;
 	protected String artist_name;
+	protected int num_loops;
+	
+	protected int[][] notes;
 	
 	public MusicTrack()
 	{
 		current_note = 0;
 		song_name = "Unknown Track";
 		artist_name = "Unknown Artist";
+		num_loops = 1;
+		notes = null;
 	}
 	
-	public abstract int[] getNote();
+	public int[] getNote()
+	{
+		return notes[current_note % notes.length];
+	}
 	
 	public void advance()
 	{
@@ -72,6 +80,14 @@ public abstract class MusicTrack
 	public void restart()
 	{
 		current_note = 0;
+	}
+	
+	public boolean isAtEnd()
+	{
+		if (current_note >= num_loops * notes.length)
+			return true;
+		else
+			return false;
 	}
 	
 	public String getSongName()

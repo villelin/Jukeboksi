@@ -29,10 +29,7 @@ public class JohnCena extends MusicTrack
 	{
 		song_name = "The time is now";
 		artist_name = "John Cena";
-	}
-	
-	public int[] getNote()
-	{
-		return notedata[current_note % notedata.length];
+		num_loops = 8;
+		notes = notedata;
 	}
 }

@@ -64,10 +64,7 @@ public class Zelda extends MusicTrack
 	{
 		song_name = "Overworld";
 		artist_name = "Legend of Zelda";
-	}
-	
-	public int[] getNote()
-	{
-		return notedata[current_note % notedata.length];
+		num_loops = 2;
+		notes = notedata;
 	}
 }

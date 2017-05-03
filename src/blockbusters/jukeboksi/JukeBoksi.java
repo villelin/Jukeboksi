@@ -19,6 +19,8 @@ public class JukeBoksi {
 
 	public static String artistName;
 	public static String songName;
+	public static int coinCount;
+	public static int creditCount;
 	
 	private Screen screen;
 	private Remote remote;
@@ -26,6 +28,8 @@ public class JukeBoksi {
 	private CoinCounter coin;
 	private DiscReader discPlayer;
 	private Drive driver;
+	
+	
 	
 	public JukeBoksi(){
 		screen = new Screen();
@@ -36,15 +40,22 @@ public class JukeBoksi {
 		driver = new Drive(leftMotor, rightMotor);
 	}
 
-	public void aja() {
+	public void Player() {
 
+		boolean start = true;
+	
+		music.start();
+		coin.start();
+		remote.start();
+		//driver.start();
 		
 		artistName = music.getArtistName();
 		songName = music.getSongName();
 		screen.showPage(1);
 		
-		while (true) {
+		while (start) {
 			
+			creditCount = coin.getCredits();
 			switch (remote.getRemoteCommand()) {
 			case 1: // Remote topleft
 				music.incVolume();
@@ -53,9 +64,15 @@ public class JukeBoksi {
 				music.decVolume();
 				break;
 			case 3: // Remote topright, musiikin pysäytys
-				music.stop_playing();
+				//if(music.isPlaying()){
+					music.stopPlaying();
+				//}
+				//else{
+				//	music.startPlaying();
+				//}	
 				break;
 			case 4: // Remote bottomright, saldo
+				coinCount = coin.getCoins();
 				screen.showPage(9);
 				break;
 			case 5: // LEFT-Button
@@ -63,9 +80,11 @@ public class JukeBoksi {
 				 * break;
 				 * }
 				 * else{
-				 * discPlayer.lastSong(); 
+				 * discPlayer.lastTrack(); 
+				 * music.changeSong(discPlayer.getSongID();
+				 * creditCount = coin.getCredits();
 				 * artistName = music.getArtistName();
-				 * songName = music.getSongname(); 
+				 * songName = music.getSongName(); 
 				 * screen.showPage(1);
 				 * break;
 				 * }
@@ -76,9 +95,11 @@ public class JukeBoksi {
 				 * break;
 				 * }
 				 * else{
-				 * discPlayer.nextSong(); 
+				 * discPlayer.nextTrack();
+				 * music.changeSong(discPlayer.getSongID();
+				 * creditCount = coin.getCredits();
 				 * artistName = music.getArtistName();
-				 * songName = music.getSongname(); 
+				 * songName = music.getSongName(); 
 				 * screen.showPage(1);
 				 * break;
 				 * }
@@ -96,6 +117,20 @@ public class JukeBoksi {
 				 * Tanssi? Mikä metodi?
 				 * 
 				 */
+				if(coin.useCredits()){
+					music.startPlaying();
+					creditCount = coin.getCredits();
+					screen.showPage(1);
+					/*
+					 * driver.dance(music.getSongName());
+					 */
+				}
+				else{
+					screen.showPage(3);
+				}
+			case 10:
+				start = false;
+				break;
 			}
 			Delay.msDelay(50);
 		}

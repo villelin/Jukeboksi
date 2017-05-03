@@ -6,12 +6,10 @@ import lejos.utility.Delay;
 
 public class Screen {
 
-	private int credits;
-	// private int page;
 
 	public void showPage(int page) {
 
-		int raha;
+
 		
 		Delay.msDelay(50);
 		LCD.clear();
@@ -22,23 +20,32 @@ public class Screen {
 			LCD.drawString(JukeBoksi.artistName, 0, 4);
 			
 			
-			LCD.drawString("Credits: " + credits, 0, 7);
+			LCD.drawString("Credits: " + JukeBoksi.creditCount, 0, 7);
 			break;
+			
+		case 2:
+			LCD.drawString("Select song:", 0, 1);
+			LCD.drawString(JukeBoksi.songName, 0, 2);
+			LCD.drawString(JukeBoksi.artistName, 0, 4);
+			
+			
+			LCD.drawString("Credits: " + JukeBoksi.creditCount, 0, 7);
 
+		case 3:
+			LCD.drawString("Enter", 0, 1);
+			LCD.drawString("coin(s)", 0, 2);
+			
+			LCD.drawString("Credits: " + JukeBoksi.creditCount, 0, 7);
 
 		case 9:
 			// raha = CoinCounter.getCoins();
 			LCD.drawString("Koneen saldo", 0, 1);
-			LCD.drawString(" euroa", 0, 2);
+			LCD.drawString(JukeBoksi.coinCount + " kolikkoa", 0, 2);
 			LCD.drawString("", 0, 3);
 
-			LCD.drawString("Credits: " + credits, 0, 7);
+			LCD.drawString("Credits: " + JukeBoksi.creditCount, 0, 7);
 			break;
 		}
 	}
 
-	public void updateCredits() {
-		// credits = CoinCounter.getCredits();
-
-	}
 }

@@ -62,6 +62,7 @@ public class JukeBoksi {
 		
 		while (start) {
 			
+			creditCount = coin.getCredits();
 			if(creditChange != creditCount){
 				creditChange = creditCount;
 				screen.showPage(lastPage);

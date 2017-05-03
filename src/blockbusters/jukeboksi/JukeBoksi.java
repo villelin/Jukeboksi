@@ -143,6 +143,24 @@ public class JukeBoksi {
 				start = false;
 				break;
 			}
+			case 9: //Remotedrive topleft
+				//driver.driveleftmotor
+				break;
+			case 10: //Remotedrive bottomleft
+				//driver.driverightmotor
+				break;
+			case 11: //Remotedrive topright
+				//driver.drive JOTAIN
+				break;
+			case 12: //Remotedrive bottomright
+				//driver.drive JOTAIN
+				break;
+			case 13: //Remotedrive topleft + topright
+				//driver.drive ETEENPÄIN?
+				break;
+			case 14: //Remotedrive bottomledt + bottomright
+				//driver.drive TAAKSEPÄIN?
+				break;
 			Delay.msDelay(50);
 			
 		}

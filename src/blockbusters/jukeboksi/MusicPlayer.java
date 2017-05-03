@@ -1,5 +1,6 @@
 package blockbusters.jukeboksi;
 
+import lejos.hardware.Button;
 import lejos.hardware.Sound;
 
 public class MusicPlayer extends Thread
@@ -39,6 +40,7 @@ public class MusicPlayer extends Thread
 	public void stopPlaying()
 	{
 		playing = false;
+		Button.LEDPattern(0);
 	}
 	
 	public void changeSong(int song)
@@ -48,6 +50,7 @@ public class MusicPlayer extends Thread
 			current_song = songs[song];
 			current_song.restart();
 			playing = false;
+			Button.LEDPattern(0);
 		}
 	}
 	
@@ -87,6 +90,8 @@ public class MusicPlayer extends Thread
 	{
 		Sound.setVolume(volume);
 		
+		int led = 0;
+		
 		while (true)
 		{
 			try {
@@ -103,9 +108,13 @@ public class MusicPlayer extends Thread
 					Sound.pause(note_plus_pause - note_duration);
 				
 					current_song.advance();
+					
+					Button.LEDPattern((led % 3) + 1);
+					led++;
+					
 					if (current_song.isAtEnd())
 					{
-						playing = false;
+						stopPlaying();
 					}
 				}
 				sleep(1);

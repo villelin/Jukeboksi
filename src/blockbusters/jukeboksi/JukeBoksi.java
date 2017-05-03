@@ -120,7 +120,10 @@ public class JukeBoksi {
 				}
 
 			case 7: // ENTER-button
-				
+				if(music.isPlaying()){
+					break;
+				}
+				else{
 				if(coin.useCredits()){
 					music.startPlaying();
 					creditCount = coin.getCredits();
@@ -133,6 +136,7 @@ public class JukeBoksi {
 				else{
 					lastPage = 3;
 					screen.showPage(lastPage);
+				}
 				}
 				break;
 			case 8:

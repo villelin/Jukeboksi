@@ -1,10 +1,8 @@
 package blockbusters.jukeboksi;
 
-<<<<<<< HEAD
-=======
 import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.robotics.Color;
->>>>>>> 3d791d55c86612faeef37033e776196b17998de4
+
 
 public class CoinCounter extends Thread {
 	
@@ -39,7 +37,7 @@ public class CoinCounter extends Thread {
 		}
 		
 	}
-	ejfqdbfdj
+
 	public void run() {
 		
 		while (true) {

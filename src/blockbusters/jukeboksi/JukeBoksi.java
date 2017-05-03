@@ -48,26 +48,26 @@ public class JukeBoksi {
 	public void Player() {
 
 		boolean start = true;
-	
+
 		music.start();
 		coin.start();
 		remote.start();
-		//driver.start();
-		
+		// driver.start();
+
 		int lastPage = 1;
 		int creditChange = creditCount;
 		artistName = music.getArtistName();
 		songName = music.getSongName();
 		screen.showPage(lastPage);
-		
+
 		while (start) {
-			
+
 			creditCount = coin.getCredits();
-			if(creditChange != creditCount){
+			if (creditChange != creditCount) {
 				creditChange = creditCount;
 				screen.showPage(lastPage);
 			}
-			
+
 			switch (remote.getRemoteCommand()) {
 			case 1: // Remote topleft
 				music.incVolume();
@@ -76,12 +76,12 @@ public class JukeBoksi {
 				music.decVolume();
 				break;
 			case 3: // Remote topright, musiikin pysäytys
-				//if(music.isPlaying()){
-					music.stopPlaying();
-				//}
-				//else{
-				//	music.startPlaying();
-				//}	
+				// if(music.isPlaying()){
+				music.stopPlaying();
+				// }
+				// else{
+				// music.startPlaying();
+				// }
 				break;
 			case 4: // Remote bottomright, saldo
 				coinCount = coin.getCoins();
@@ -89,106 +89,97 @@ public class JukeBoksi {
 				screen.showPage(lastPage);
 				break;
 			case 5: // LEFT-Button
-				 if(music.isPlaying()){
-				 break;
-				 }
-				 else{
-				 discPlayer.lastSong(); 
-				 music.changeSong(discPlayer.getSongID());
-				 creditCount = coin.getCredits();
-				 artistName = music.getArtistName();
-				 songName = music.getSongName(); 
-				 lastPage = 1;
-				 screen.showPage(lastPage);
-				 break;
-				 }
-				 
-				 
-			case 6: // RIGHT-Button
-				if(music.isPlaying()){
-				break;
+				if (music.isPlaying()) {
+					break;
+				} else {
+					discPlayer.lastSong();
+					music.changeSong(discPlayer.getSongID());
+					creditCount = coin.getCredits();
+					artistName = music.getArtistName();
+					songName = music.getSongName();
+					lastPage = 1;
+					screen.showPage(lastPage);
+					break;
 				}
-				else{
-				discPlayer.nextSong();
-				music.changeSong(discPlayer.getSongID());
-				creditCount = coin.getCredits();
-				artistName = music.getArtistName();
-				songName = music.getSongName(); 
-				lastPage = 1;
-				screen.showPage(lastPage);
-				break;
+
+			case 6: // RIGHT-Button
+				if (music.isPlaying()) {
+					break;
+				} else {
+					discPlayer.nextSong();
+					music.changeSong(discPlayer.getSongID());
+					creditCount = coin.getCredits();
+					artistName = music.getArtistName();
+					songName = music.getSongName();
+					lastPage = 1;
+					screen.showPage(lastPage);
+					break;
 				}
 
 			case 7: // ENTER-button
-				if(music.isPlaying()){
+				if (music.isPlaying()) {
 					break;
-				}
-				else{
-				if(coin.useCredits()){
-					music.startPlaying();
-					creditCount = coin.getCredits();
-					lastPage = 1;
-					screen.showPage(lastPage);
-					/*
-					 * driver.dance(music.getSongName());
-					 */
-				}
-				else{
-					lastPage = 3;
-					screen.showPage(lastPage);
-				}
+				} else {
+					if (coin.useCredits()) {
+						music.startPlaying();
+						creditCount = coin.getCredits();
+						lastPage = 1;
+						screen.showPage(lastPage);
+						/*
+						 * driver.dance(music.getSongName());
+						 */
+					} else {
+						lastPage = 3;
+						screen.showPage(lastPage);
+					}
 				}
 				break;
 			case 8:
 				start = false;
 				break;
+			case 9: // Remotedrive topleft
+				// driver.driveleftmotor
+				break;
+			case 10: // Remotedrive bottomleft
+				// driver.driverightmotor
+				break;
+			case 11: // Remotedrive topright
+				// driver.drive JOTAIN
+				break;
+			case 12: // Remotedrive bottomright
+				// driver.drive JOTAIN
+				break;
+			case 13: // Remotedrive topleft + topright
+				// driver.drive ETEENPÄIN?
+				break;
+			case 14: // Remotedrive bottomledt + bottomright
+				// driver.drive TAAKSEPÄIN?
+				break;
 			}
-			case 9: //Remotedrive topleft
-				//driver.driveleftmotor
-				break;
-			case 10: //Remotedrive bottomleft
-				//driver.driverightmotor
-				break;
-			case 11: //Remotedrive topright
-				//driver.drive JOTAIN
-				break;
-			case 12: //Remotedrive bottomright
-				//driver.drive JOTAIN
-				break;
-			case 13: //Remotedrive topleft + topright
-				//driver.drive ETEENPÄIN?
-				break;
-			case 14: //Remotedrive bottomledt + bottomright
-				//driver.drive TAAKSEPÄIN?
-				break;
 			Delay.msDelay(50);
-			
 		}
-		
+
 		music.interrupt();
 		coin.interrupt();
 		remote.interrupt();
-		//driver.interrupt();
-		
+		// driver.interrupt();
+
 		try {
 			music.join();
 			coin.join();
 			remote.join();
-			//driver.join();
+			// driver.join();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		
 		irSensor.close();
 		discMotor.close();
 		discReader.close();
 		coinSensor.close();
 		leftMotor.close();
 		rightMotor.close();
-		
-		
 
 	}
 }

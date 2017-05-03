@@ -20,9 +20,9 @@ public class Remote extends Thread {
 
 		return remotelast;
 	}
-	
-	public int getRemoteDrive(){
-		
+
+	public int getRemoteDrive() {
+
 		return remoteDriveLast;
 	}
 
@@ -35,23 +35,47 @@ public class Remote extends Thread {
 				return;
 			}
 			remoteCommand = infraredSensor.getRemoteCommand(0);
+			remoteDrive = infraredSensor.getRemoteCommand(3);
 
 			if (remoteCommand != 0) {
 				switch (remoteCommand) {
-				case 1:
+				case 1: //leftTop
 					remotelast = 1;
 					break;
-				case 2:
+				case 2: // leftBottom
 					remotelast = 2;
 					break;
-				case 3:
+				case 3: // rightTop
 					remotelast = 3;
 					break;
-				case 4:
+				case 4: // rightBottom
 					remotelast = 4;
 					break;
 				default:
 					remotelast = 0;
+					break;
+				}
+			} else if (remoteDrive != 0) {
+				switch (remoteDrive) {
+				case 1: // leftTop
+					remoteDriveLast = 1;
+					break;
+				case 2: // leftBottom
+					remoteDriveLast = 2;
+					break;
+				case 3: // rightTop
+					remoteDriveLast = 3;
+					break;
+				case 4: // rightBottom
+					remoteDriveLast = 4;
+					break;
+				case 5: // topLeft + topRight
+					remoteDriveLast = 5;
+					break;
+				case 8: // bottomLeft + bottomRight
+					remoteDriveLast = 6;
+				default:
+					remoteDriveLast = 0;
 					break;
 				}
 			} else {
@@ -60,7 +84,7 @@ public class Remote extends Thread {
 					remotelast = 0;
 					break;
 				case Button.ID_LEFT:
-					
+
 					remotelast = 5;
 					break;
 				case Button.ID_RIGHT:
@@ -80,29 +104,6 @@ public class Remote extends Thread {
 					break;
 				}
 
-			}
-			remoteDrive = infraredSensor.getRemoteCommand(3);
-			switch (remoteDrive){
-			case 1: //leftTop
-				remoteDriveLast = 1;
-				break;
-			case 2: //leftBottom
-				remoteDriveLast = 2;
-				break;
-			case 3: //rightTop
-				remoteDriveLast = 3;
-				break;
-			case 4: //rightBottom
-				remoteDriveLast = 4;
-				break;
-			case 5: //topLeft + topRight
-				remoteDriveLast = 5;
-				break;
-			case 8: //bottomLeft + bottomRight
-				remoteDriveLast = 6;
-			default:
-				remoteDriveLast = 0;
-				break;
 			}
 		}
 

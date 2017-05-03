@@ -60,16 +60,16 @@ public class Remote extends Thread {
 					remotelast = 6;
 					break;
 				case Button.ID_DOWN:
-					remotelast = 7;
+					remotelast = 2;
 					break;
 				case Button.ID_UP:
-					remotelast = 8;
+					remotelast = 3;
 					break;
 				case Button.ID_ENTER:
-					remotelast = 9;
+					remotelast = 7;
 					break;
 				case Button.ID_ESCAPE:
-					remotelast = 10;
+					remotelast = 8;
 					break;
 				}
 

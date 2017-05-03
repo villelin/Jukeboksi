@@ -54,13 +54,19 @@ public class JukeBoksi {
 		remote.start();
 		//driver.start();
 		
+		int lastPage = 1;
+		int creditChange = creditCount;
 		artistName = music.getArtistName();
 		songName = music.getSongName();
-		screen.showPage(1);
+		screen.showPage(lastPage);
 		
 		while (start) {
 			
-			creditCount = coin.getCredits();
+			if(creditChange != creditCount){
+				creditChange = creditCount;
+				screen.showPage(lastPage);
+			}
+			
 			switch (remote.getRemoteCommand()) {
 			case 1: // Remote topleft
 				music.incVolume();
@@ -78,7 +84,8 @@ public class JukeBoksi {
 				break;
 			case 4: // Remote bottomright, saldo
 				coinCount = coin.getCoins();
-				screen.showPage(9);
+				lastPage = 9;
+				screen.showPage(lastPage);
 				break;
 			case 5: // LEFT-Button
 				 if(music.isPlaying()){
@@ -90,7 +97,8 @@ public class JukeBoksi {
 				 creditCount = coin.getCredits();
 				 artistName = music.getArtistName();
 				 songName = music.getSongName(); 
-				 screen.showPage(1);
+				 lastPage = 1;
+				 screen.showPage(lastPage);
 				 break;
 				 }
 				 
@@ -105,36 +113,33 @@ public class JukeBoksi {
 				creditCount = coin.getCredits();
 				artistName = music.getArtistName();
 				songName = music.getSongName(); 
-				screen.showPage(1);
+				lastPage = 1;
+				screen.showPage(lastPage);
 				break;
 				}
-				
-				
-			case 7: // UP-Button
-				music.incVolume();
-				break;
-			case 8: // DOWN-button
-				music.decVolume();
-				break;
-			case 9: // ENTER-button
+
+			case 7: // ENTER-button
 				
 				if(coin.useCredits()){
 					music.startPlaying();
 					creditCount = coin.getCredits();
-					screen.showPage(1);
+					lastPage = 1;
+					screen.showPage(lastPage);
 					/*
 					 * driver.dance(music.getSongName());
 					 */
 				}
 				else{
-					screen.showPage(3);
+					lastPage = 3;
+					screen.showPage(lastPage);
 				}
 				break;
-			case 10:
+			case 8:
 				start = false;
 				break;
 			}
 			Delay.msDelay(50);
+			
 		}
 		
 		music.interrupt();

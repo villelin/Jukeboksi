@@ -53,6 +53,7 @@ public class Remote extends Thread {
 					remotelast = 0;
 					break;
 				case Button.ID_LEFT:
+					
 					remotelast = 5;
 					break;
 				case Button.ID_RIGHT:

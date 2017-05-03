@@ -60,6 +60,12 @@ public class Zelda extends MusicTrack
 		{ F6,		BEAT-5,			BEAT },
 	};
 	
+	public Zelda()
+	{
+		song_name = "Overworld";
+		artist_name = "Legend of Zelda";
+	}
+	
 	public int[] getNote()
 	{
 		return notedata[current_note % notedata.length];

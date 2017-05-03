@@ -47,7 +47,7 @@ public class CoinCounter extends Thread {
 				sleep (50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				return;
 			}
 			int lul = coinReader.getColorID();
 			if (lul != Color.GREEN) {

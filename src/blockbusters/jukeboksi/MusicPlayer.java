@@ -31,6 +31,11 @@ public class MusicPlayer extends Thread
 		current_song.restart();
 	}
 	
+	public boolean isPlaying()
+	{
+		return playing;
+	}
+	
 	public void stopPlaying()
 	{
 		playing = false;
@@ -84,19 +89,30 @@ public class MusicPlayer extends Thread
 		
 		while (true)
 		{
-			if (playing)
+			try {
+				if (playing)
+				{
+					int[] notedata = current_song.getNote();
+				
+					int freq = notedata[0];
+					int note_duration = notedata[1];
+					int note_plus_pause = notedata[2];
+	
+					Sound.playNote(Sound.XYLOPHONE, freq, note_duration);
+				
+					Sound.pause(note_plus_pause - note_duration);
+				
+					current_song.advance();
+					if (current_song.isAtEnd())
+					{
+						playing = false;
+					}
+				}
+				sleep(1);
+			}
+			catch (InterruptedException e)
 			{
-				int[] notedata = current_song.getNote();
-			
-				int freq = notedata[0];
-				int note_duration = notedata[1];
-				int note_plus_pause = notedata[2];
-
-				Sound.playNote(Sound.XYLOPHONE, freq, note_duration);
-			
-				Sound.pause(note_plus_pause - note_duration);
-			
-				current_song.advance();
+				return;
 			}
 		}
 	}

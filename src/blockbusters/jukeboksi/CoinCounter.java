@@ -13,6 +13,7 @@ public class CoinCounter extends Thread {
 		this.coinReader = coinreader;
 	}
 	
+	
 	public int getCoins () {
 		
 		return coins;
@@ -35,19 +36,19 @@ public class CoinCounter extends Thread {
 		}
 		
 	}
-	
+	ejfqdbfdj
 	public void run() {
 		
-		while (true)
+		while (true) {
 			
+			int lul = coinReader.getColorID();
+			if (lul != 1) {
+				credits++;
+				coins++;
+			} 
 			
-			try {
-				sleep(50);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 		
 	}
 
+}

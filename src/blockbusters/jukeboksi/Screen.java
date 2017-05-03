@@ -30,13 +30,15 @@ public class Screen {
 			
 			
 			LCD.drawString("Credits: " + JukeBoksi.creditCount, 0, 7);
+			break;
 
 		case 3:
 			LCD.drawString("Enter", 0, 1);
 			LCD.drawString("coin(s)", 0, 2);
 			
 			LCD.drawString("Credits: " + JukeBoksi.creditCount, 0, 7);
-
+			break;
+			
 		case 9:
 			// raha = CoinCounter.getCoins();
 			LCD.drawString("Koneen saldo", 0, 1);

@@ -129,6 +129,7 @@ public class JukeBoksi {
 				else{
 					screen.showPage(3);
 				}
+				break;
 			case 10:
 				start = false;
 				break;

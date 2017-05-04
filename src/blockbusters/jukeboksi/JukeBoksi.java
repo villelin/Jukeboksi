@@ -139,18 +139,23 @@ public class JukeBoksi {
 				break;
 			case 9: // Remotedrive topleft
 				// driver.driveleftmotor
+				driver.turnLeft();
 				break;
 			case 10: // Remotedrive bottomleft
 				// driver.driverightmotor
+				driver.backward();
 				break;
 			case 11: // Remotedrive topright
 				// driver.drive JOTAIN
+				driver.turnRight();
 				break;
 			case 12: // Remotedrive bottomright
 				// driver.drive JOTAIN
+				driver.stop();
 				break;
 			case 13: // Remotedrive topleft + topright
 				// driver.drive ETEENPÄIN?
+				driver.forward();
 				break;
 			case 14: // Remotedrive bottomledt + bottomright
 				// driver.drive TAAKSEPÄIN?

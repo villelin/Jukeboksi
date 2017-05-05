@@ -30,10 +30,13 @@ public class DiscReader {
 		
 		switch (discReader.getColorID()) 
 		{
+			case Color.YELLOW:
+				song = 0;
+				break;
+		
 			case Color.GREEN:
 				song = 1;
-				break;
-				
+				break;	
 				
 			case Color.RED:
 				song = 2;
@@ -45,6 +48,10 @@ public class DiscReader {
 				
 			case Color.WHITE:
 				song = 4;
+				break;
+			
+			case Color.MAGENTA:
+				song = 5;
 				break;
 				
 			default:

@@ -1,3 +1,9 @@
+/**
+ * M‰‰ritt‰‰ "Korobeiniki (Russian Folk Song)" kappaleen.
+ * @author Ville Linde
+ * @version 1.0
+ */
+
 package blockbusters.jukeboksi;
 
 public class Tetris extends MusicTrack
@@ -55,7 +61,7 @@ public class Tetris extends MusicTrack
 	public Tetris()
 	{
 		song_name = "Korobeiniki";
-		artist_name = "Russian Folk Song";
+		artist_name = "(Russian Folk Song)";
 		num_loops = 2;
 		notes = notedata;
 	}

@@ -1,3 +1,9 @@
+/**
+ * MusicTrack on abstrakti luokka, joka määrittää musiikkikappaleen.
+ * 
+ * @author Ville Linde
+ * @version 1.0
+ */
 package blockbusters.jukeboksi;
 
 public abstract class MusicTrack
@@ -67,21 +73,37 @@ public abstract class MusicTrack
 		notes = null;
 	}
 	
+	/**
+	 * Palauttaa soitettavan nuotin tiedot.
+	 * 
+	 * @return Nuotin tiedot taulukossa. Indeksi 0: nuotin korkeus. Indeksi 1: Nuotin pituus (millisekuntia). Indeksi 2: Aika seuraavaan nuottiin (millisekuntia).
+	 */
 	public int[] getNote()
 	{
 		return notes[current_note % notes.length];
 	}
 	
+	/**
+	 * Siirry seuraavaan nuottiin.
+	 */
 	public void advance()
 	{
 		current_note++;
 	}
 	
+	/**
+	 * Aloittaa kappaleen alusta.
+	 */
 	public void restart()
 	{
 		current_note = 0;
 	}
 	
+	/**
+	 * Kertoo onko kappaleen soitto lopussa.
+	 * 
+	 * @return true, jos kappale on lopussa, muuten false.
+	 */
 	public boolean isAtEnd()
 	{
 		if (current_note >= num_loops * notes.length)
@@ -90,11 +112,21 @@ public abstract class MusicTrack
 			return false;
 	}
 	
+	/**
+	 * Palauttaa kappaleen nimen
+	 * 
+	 * @return Kappaleen nimi
+	 */
 	public String getSongName()
 	{
 		return song_name;
 	}
 	
+	/**
+	 * Palauttaa kappaleen esittäjän
+	 * 
+	 * @return Kappaleen esittäjä
+	 */
 	public String getArtistName()
 	{
 		return artist_name;

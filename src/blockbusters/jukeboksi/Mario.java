@@ -1,3 +1,9 @@
+/**
+ * M‰‰ritt‰‰ "Super Mario Bros - Theme" kappaleen.
+ * @author Ville Linde
+ * @version 1.0
+ */
+
 package blockbusters.jukeboksi;
 
 public class Mario extends MusicTrack {

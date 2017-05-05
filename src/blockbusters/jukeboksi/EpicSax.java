@@ -1,3 +1,9 @@
+/**
+ * M‰‰ritt‰‰ "Sergey Stepanov - Epic Sax Guy" kappaleen.
+ * @author Ville Linde
+ * @version 1.0
+ */
+
 package blockbusters.jukeboksi;
 
 public class EpicSax extends MusicTrack

@@ -1,3 +1,11 @@
+/**
+ * MusicPlayer soittaa MusicTrack-luokkien m‰‰rittelem‰‰ nuottidataa.
+ * Luokka pyˆrii omassa s‰ikeess‰‰n.
+ * 
+ * @author Ville Linde
+ * @version 1.0
+ */
+
 package blockbusters.jukeboksi;
 
 import lejos.hardware.Button;
@@ -26,23 +34,39 @@ public class MusicPlayer extends Thread
 		volume = 10;
 	}
 	
+	/**
+	 *  Aloittaa kappaleen soittamisen
+	 */
 	public void startPlaying()
 	{
 		playing = true;
 		current_song.restart();
 	}
 	
+	/**
+	 * Kertoo onko kappale soimassa
+	 * 
+	 * @return true, jos kappale soi, muuten false.
+	 */
 	public boolean isPlaying()
 	{
 		return playing;
 	}
 	
+	/**
+	 * Lopettaa kappaleen soittamisen
+	 */
 	public void stopPlaying()
 	{
 		playing = false;
 		Button.LEDPattern(0);
 	}
 	
+	/**
+	 * Vaihtaa soitettavan kappaleen haluttuun kappaleeseen
+	 * 
+	 * @param song Soitettavan kappaleen indeksi
+	 */
 	public void changeSong(int song)
 	{
 		if (song >= 0 && song < songs.length)
@@ -54,22 +78,33 @@ public class MusicPlayer extends Thread
 		}
 	}
 	
-	public void incVolume()
+	/**
+	 * Nostaa ‰‰nenvoimakkuutta. Jos voimakkuus on jo 100, voimakkuus ei muutu.
+	 */
+	public void incVolume(int amount)
 	{
-		volume += 10;
+		volume += amount;
 		if (volume > 100)
 			volume = 100;
 		Sound.setVolume(volume);
 	}
 	
-	public void decVolume()
+	/**
+	 * Pienent‰‰ ‰‰nenvoimakkuutta. Jos voimakkuus on 0, voimakkuus ei muutu. 
+	 */
+	public void decVolume(int amount)
 	{
-		volume -= 10;
+		volume -= amount;
 		if (volume < 0)
 			volume = 0;
 		Sound.setVolume(volume);
 	}
 	
+	/**
+	 * Palauttaa t‰ll‰ hetkell‰ valitun kappaleen nimen
+	 * 
+	 * @return Kappaleen nimi
+	 */
 	public String getSongName()
 	{
 		if (current_song != null)
@@ -78,6 +113,11 @@ public class MusicPlayer extends Thread
 			return "";
 	}
 	
+	/**
+	 * Palauttaa t‰ll‰ hetkell‰ valitun kappaleen esitt‰j‰n
+	 * 
+	 * @return Kappaleen esitt‰j‰
+	 */
 	public String getArtistName()
 	{
 		if (current_song != null)
@@ -86,6 +126,9 @@ public class MusicPlayer extends Thread
 			return "";
 	}
 	
+	/**
+	 * Suoritussilmukka, toistaa musiikkia.
+	 */
 	public void run()
 	{
 		Sound.setVolume(volume);

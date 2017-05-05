@@ -1,3 +1,9 @@
+/**
+ * M‰‰ritt‰‰ "Eduard Khil - I am very glad, as I'm finally returning back home" kappaleen.
+ * @author Ville Linde
+ * @version 1.0
+ */
+
 package blockbusters.jukeboksi;
 
 public class Trololol extends MusicTrack

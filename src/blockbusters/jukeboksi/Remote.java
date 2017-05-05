@@ -2,12 +2,13 @@ package blockbusters.jukeboksi;
 
 import lejos.hardware.Button;
 import lejos.hardware.sensor.EV3IRSensor;
-import lejos.utility.Delay;
 
 /**
+ * Remote-luokka kuuntelee kaukosäädintä kanavilla 1 ja 4 sekä näppäimistöä.
+ * Luokka toimii omassa säikeessään.
  * 
  * @author Joona Ikonen
- *
+ * @version 1.0
  */
 
 public class Remote extends Thread {
@@ -23,6 +24,7 @@ public class Remote extends Thread {
 
 	/**
 	 * Palauttaa tämänhetkisen painalluksen kaukosäätimeltä tai näppäimistöltä
+	 * 
 	 * @return Palauttaa tämänhetkisen painalluksen
 	 */
 	public int getRemoteCommand() {

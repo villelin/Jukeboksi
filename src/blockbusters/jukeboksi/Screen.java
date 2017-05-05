@@ -1,52 +1,75 @@
 package blockbusters.jukeboksi;
 
 import lejos.hardware.lcd.LCD;
-import lejos.utility.Delay;
 
 /**
+ * Screen-luokka hallitsee ainoana luokkana näytölle kirjoitettavaa tekstiä.
  * 
  * @author Joona Ikonen
- *
+ * @version 1.0
  */
 
 public class Screen {
 
-	/**Piirretään näytölle oikea info
+	/**
+	 * Piirretään näytölle nyt soivan kappaleen tiedot.
 	 * 
-	 * @param page
+	 * @param artistName
+	 * @param songName
 	 */
-	public void songPlaying(String artistName, String songName){
+	public void songPlaying(String artistName, String songName) {
 		LCD.clear();
 		LCD.drawString("Now playing:", 0, 1);
 		LCD.drawString(songName, 0, 2);
 		LCD.drawString(artistName, 0, 4);
-		
+
 	}
-	public void songSelect(String artistName, String songName){
+
+	/**
+	 * Piirretään näytölle valittavan kappaleen tiedot.
+	 * 
+	 * @param artistName
+	 * @param songName
+	 */
+	public void songSelect(String artistName, String songName) {
 		LCD.clear();
 		LCD.drawString("Select song:", 0, 1);
 		LCD.drawString(songName, 0, 2);
 		LCD.drawString(artistName, 0, 4);
 	}
-	public void noCredits(){
+
+	/**
+	 * Piirretään näytölle ilmoitus krediittien määrän ollessa 0.
+	 */
+	public void noCredits() {
 		LCD.clear();
 		LCD.drawString("Enter", 0, 1);
 		LCD.drawString("coin(s)", 0, 2);
-		
+
 	}
-	public void creditAmount(int creditCount){
-		
+
+	/**
+	 * Piirretään näytölle tämänhetkinen krediittitilanne.
+	 * 
+	 * @param creditCount
+	 */
+	public void creditAmount(int creditCount) {
+
 		LCD.drawString("Credits: " + creditCount, 0, 7);
 	}
-	
-	
-	public void showSaldo(int coinCount){
+
+	/**
+	 * Piirretään näytölle koneessa olevien kolikkojen määrä.
+	 * 
+	 * @param coinCount
+	 */
+	public void showSaldo(int coinCount) {
 		LCD.clear();
 		LCD.drawString("Koneen saldo", 0, 1);
 		LCD.drawString(coinCount + " kolikkoa", 0, 2);
 		LCD.drawString("", 0, 3);
-		if(coinCount > 5){
-		LCD.drawString("Empty the bank!", 0, 6);
+		if (coinCount > 5) {
+			LCD.drawString("Empty the bank!", 0, 6);
 		}
 	}
 

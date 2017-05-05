@@ -12,23 +12,23 @@ import lejos.utility.Delay;
  * Jukeboksi toimii viestinv‰litt‰j‰n‰ ja yhdist‰‰ muut luokat.
  * 
  * @author Joona Ikonen
- * @version 0.5
+ * @version 1.0
  */
 
 public class JukeBoksi {
 
-	EV3IRSensor irSensor = new EV3IRSensor(SensorPort.S3);
-	EV3ColorSensor discReader = new EV3ColorSensor(SensorPort.S4);
-	EV3ColorSensor coinSensor = new EV3ColorSensor(SensorPort.S2);
-	EV3LargeRegulatedMotor leftMotor = new EV3LargeRegulatedMotor(MotorPort.B);
-	EV3LargeRegulatedMotor rightMotor = new EV3LargeRegulatedMotor(MotorPort.C);
-	EV3MediumRegulatedMotor discMotor = new EV3MediumRegulatedMotor(MotorPort.D);
+	private EV3IRSensor irSensor = new EV3IRSensor(SensorPort.S3);
+	private EV3ColorSensor discReader = new EV3ColorSensor(SensorPort.S4);
+	private EV3ColorSensor coinSensor = new EV3ColorSensor(SensorPort.S2);
+	private EV3LargeRegulatedMotor leftMotor = new EV3LargeRegulatedMotor(MotorPort.B);
+	private EV3LargeRegulatedMotor rightMotor = new EV3LargeRegulatedMotor(MotorPort.C);
+	private EV3MediumRegulatedMotor discMotor = new EV3MediumRegulatedMotor(MotorPort.D);
 
 	private int coinCount;
 	private int creditCount;
 	private String songName;
 	private String songArtist;
-	
+
 	private Screen screen;
 	private Remote remote;
 	private MusicPlayer music;
@@ -36,9 +36,6 @@ public class JukeBoksi {
 	private DiscReader discPlayer;
 	private Drive driver;
 
-	/**
-	 * 
-	 */
 	public JukeBoksi() {
 		screen = new Screen();
 		remote = new Remote(irSensor);
@@ -49,7 +46,7 @@ public class JukeBoksi {
 	}
 
 	/**
-	 * 
+	 * Jukeboksin syd‰n. K‰sittelee saapuvat komennot ja hallitsee muita luokkia
 	 */
 	public void Player() {
 
@@ -72,10 +69,9 @@ public class JukeBoksi {
 			if (creditChange != creditCount) {
 				creditChange = creditCount;
 
-				if(lastPage == 1){
+				if (lastPage == 1) {
 					screen.songSelect(songArtist, songName);
-				}
-				else{
+				} else {
 					screen.songPlaying(songArtist, songName);
 				}
 			}
@@ -88,12 +84,7 @@ public class JukeBoksi {
 				music.decVolume(20);
 				break;
 			case 3: // Remote topright, musiikin pys‰ytys
-				// if(music.isPlaying()){
 				music.stopPlaying();
-				// }
-				// else{
-				// music.startPlaying();
-				// }
 				break;
 			case 4: // Remote bottomright, saldo
 				coinCount = coin.getCoins();

@@ -1,3 +1,9 @@
+/**
+ * Drive-luokka ohjaa robottia.
+ * @author Ville Linde
+ * @version 1.0
+ */
+
 package blockbusters.jukeboksi;
 
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
@@ -18,30 +24,45 @@ public class Drive {
 		this.rightMotor.stop();
 	}
 	
+	/**
+	 * Aloittaa liikuttamaan robottia eteenp‰in.
+	 */
 	public void forward()
 	{
 		leftMotor.backward();
 		rightMotor.backward();
 	}
 	
+	/**
+	 * Aloittaa liikuttamaan robottia taaksep‰in.
+	 */
 	public void backward()
 	{
 		leftMotor.forward();
 		rightMotor.forward();
 	}
 	
+	/**
+	 * Aloittaa k‰‰nt‰m‰‰n robottia vasemmalle.
+	 */
 	public void turnLeft()
 	{
 		leftMotor.forward();
 		rightMotor.backward();
 	}
 	
+	/**
+	 * Aloittaa k‰‰nt‰m‰‰n robottia oikealle.
+	 */
 	public void turnRight()
 	{
 		leftMotor.backward();
 		rightMotor.forward();
 	}
 	
+	/**
+	 * Pys‰ytt‰‰ robotin.
+	 */
 	public void stop()
 	{
 		leftMotor.stop();

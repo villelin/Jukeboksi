@@ -63,14 +63,21 @@ public class JukeBoksi {
 		int lastPage = 1;
 		int creditChange = creditCount;
 
-		screen.showPage(lastPage, songName, songArtist, creditCount);
+		screen.songSelect(songArtist, songName);
+		screen.creditAmount(creditCount);
 
 		while (start) {
 
 			creditCount = coin.getCredits();
 			if (creditChange != creditCount) {
 				creditChange = creditCount;
-				screen.showPage(lastPage, songName, songArtist, creditCount);
+
+				if(lastPage == 1){
+					screen.songSelect(songArtist, songName);
+				}
+				else{
+					screen.songPlaying(songArtist, songName);
+				}
 			}
 
 			switch (remote.getRemoteCommand()) {
@@ -101,8 +108,9 @@ public class JukeBoksi {
 					creditCount = coin.getCredits();
 					songArtist = music.getArtistName();
 					songName = music.getSongName();
-					lastPage = 2;
-					screen.showPage(lastPage, songName, songArtist, creditCount);
+					lastPage = 1;
+					screen.songSelect(songArtist, songName);
+					screen.creditAmount(creditCount);
 					break;
 				}
 
@@ -115,8 +123,9 @@ public class JukeBoksi {
 					creditCount = coin.getCredits();
 					songArtist = music.getArtistName();
 					songName = music.getSongName();
-					lastPage = 2;
-					screen.showPage(lastPage, songName, songArtist, creditCount);
+					lastPage = 1;
+					screen.songSelect(songArtist, songName);
+					screen.creditAmount(creditCount);
 					break;
 				}
 
@@ -127,14 +136,11 @@ public class JukeBoksi {
 					if (coin.useCredits()) {
 						music.startPlaying();
 						creditCount = coin.getCredits();
-						lastPage = 1;
-						screen.showPage(lastPage, songName, songArtist, creditCount);
-						/*
-						 * driver.dance(music.getSongName());
-						 */
+						lastPage = 2;
+						screen.songPlaying(songArtist, songName);
+						screen.creditAmount(creditCount);
 					} else {
-						lastPage = 3;
-						screen.showPage(lastPage,"","", creditCount);
+						screen.noCredits();
 					}
 				}
 				break;

@@ -4,6 +4,12 @@ import lejos.hardware.Button;
 import lejos.hardware.sensor.EV3IRSensor;
 import lejos.utility.Delay;
 
+/**
+ * 
+ * @author Joona Ikonen
+ *
+ */
+
 public class Remote extends Thread {
 
 	private EV3IRSensor infraredSensor;
@@ -11,17 +17,23 @@ public class Remote extends Thread {
 	private int remoteDrive = 0;
 	private int remotelast = 0;
 
-
 	public Remote(EV3IRSensor sensor) {
 		this.infraredSensor = sensor;
 	}
 
+	/**
+	 * Palauttaa tämänhetkisen painalluksen kaukosäätimeltä tai näppäimistöltä
+	 * @return Palauttaa tämänhetkisen painalluksen
+	 */
 	public int getRemoteCommand() {
 
 		return remotelast;
 	}
 
-
+	/**
+	 * Kuuntelee jatkuvasti kaukosäätimen kanavia 1 ja 4 sekä näppäimistöä.
+	 * Päivittää muuttujan remotelast arvoa painalluksen mukaan.
+	 */
 	public void run() {
 		while (true) {
 			try {
@@ -35,7 +47,7 @@ public class Remote extends Thread {
 
 			if (remoteCommand != 0) {
 				switch (remoteCommand) {
-				case 1: //leftTop
+				case 1: // leftTop
 					remotelast = 1;
 					break;
 				case 2: // leftBottom

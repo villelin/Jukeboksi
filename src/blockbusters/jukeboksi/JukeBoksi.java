@@ -24,11 +24,11 @@ public class JukeBoksi {
 	EV3LargeRegulatedMotor rightMotor = new EV3LargeRegulatedMotor(MotorPort.C);
 	EV3MediumRegulatedMotor discMotor = new EV3MediumRegulatedMotor(MotorPort.D);
 
-	public static String artistName;
-	public static String songName;
-	public static int coinCount;
-	public static int creditCount;
-
+	private int coinCount;
+	private int creditCount;
+	private String songName;
+	private String songArtist;
+	
 	private Screen screen;
 	private Remote remote;
 	private MusicPlayer music;
@@ -36,6 +36,9 @@ public class JukeBoksi {
 	private DiscReader discPlayer;
 	private Drive driver;
 
+	/**
+	 * 
+	 */
 	public JukeBoksi() {
 		screen = new Screen();
 		remote = new Remote(irSensor);
@@ -45,6 +48,9 @@ public class JukeBoksi {
 		driver = new Drive(leftMotor, rightMotor);
 	}
 
+	/**
+	 * 
+	 */
 	public void Player() {
 
 		boolean start = true;
@@ -56,24 +62,23 @@ public class JukeBoksi {
 
 		int lastPage = 1;
 		int creditChange = creditCount;
-		artistName = music.getArtistName();
-		songName = music.getSongName();
-		screen.showPage(lastPage);
+
+		screen.showPage(lastPage, songName, songArtist, creditCount);
 
 		while (start) {
 
 			creditCount = coin.getCredits();
 			if (creditChange != creditCount) {
 				creditChange = creditCount;
-				screen.showPage(lastPage);
+				screen.showPage(lastPage, songName, songArtist, creditCount);
 			}
 
 			switch (remote.getRemoteCommand()) {
 			case 1: // Remote topleft
-				music.incVolume();
+				music.incVolume(10);
 				break;
 			case 2: // Remote bottomleft
-				music.decVolume();
+				music.decVolume(20);
 				break;
 			case 3: // Remote topright, musiikin pysäytys
 				// if(music.isPlaying()){
@@ -85,8 +90,7 @@ public class JukeBoksi {
 				break;
 			case 4: // Remote bottomright, saldo
 				coinCount = coin.getCoins();
-				lastPage = 9;
-				screen.showPage(lastPage);
+				screen.showSaldo(coinCount);
 				break;
 			case 5: // LEFT-Button
 				if (music.isPlaying()) {
@@ -95,10 +99,10 @@ public class JukeBoksi {
 					discPlayer.lastSong();
 					music.changeSong(discPlayer.getSongID());
 					creditCount = coin.getCredits();
-					artistName = music.getArtistName();
+					songArtist = music.getArtistName();
 					songName = music.getSongName();
-					lastPage = 1;
-					screen.showPage(lastPage);
+					lastPage = 2;
+					screen.showPage(lastPage, songName, songArtist, creditCount);
 					break;
 				}
 
@@ -109,10 +113,10 @@ public class JukeBoksi {
 					discPlayer.nextSong();
 					music.changeSong(discPlayer.getSongID());
 					creditCount = coin.getCredits();
-					artistName = music.getArtistName();
+					songArtist = music.getArtistName();
 					songName = music.getSongName();
-					lastPage = 1;
-					screen.showPage(lastPage);
+					lastPage = 2;
+					screen.showPage(lastPage, songName, songArtist, creditCount);
 					break;
 				}
 
@@ -124,13 +128,13 @@ public class JukeBoksi {
 						music.startPlaying();
 						creditCount = coin.getCredits();
 						lastPage = 1;
-						screen.showPage(lastPage);
+						screen.showPage(lastPage, songName, songArtist, creditCount);
 						/*
 						 * driver.dance(music.getSongName());
 						 */
 					} else {
 						lastPage = 3;
-						screen.showPage(lastPage);
+						screen.showPage(lastPage,"","", creditCount);
 					}
 				}
 				break;

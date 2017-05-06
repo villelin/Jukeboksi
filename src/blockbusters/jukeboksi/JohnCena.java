@@ -1,10 +1,10 @@
+package blockbusters.jukeboksi;
+
 /**
  * M‰‰ritt‰‰ "John Cena - The time is now" kappaleen.
  * @author Ville Linde
  * @version 1.0
  */
-
-package blockbusters.jukeboksi;
 
 public class JohnCena extends MusicTrack
 {

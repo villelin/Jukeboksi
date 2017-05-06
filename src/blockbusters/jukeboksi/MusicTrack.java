@@ -1,10 +1,11 @@
+package blockbusters.jukeboksi;
+
 /**
  * MusicTrack on abstrakti luokka, joka m‰‰ritt‰‰ musiikkikappaleen.
  * 
  * @author Ville Linde
  * @version 1.0
  */
-package blockbusters.jukeboksi;
 
 public abstract class MusicTrack
 {

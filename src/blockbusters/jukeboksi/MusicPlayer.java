@@ -1,3 +1,8 @@
+package blockbusters.jukeboksi;
+
+import lejos.hardware.Button;
+import lejos.hardware.Sound;
+
 /**
  * MusicPlayer soittaa MusicTrack-luokkien m‰‰rittelem‰‰ nuottidataa.
  * Luokka pyˆrii omassa s‰ikeess‰‰n.
@@ -5,11 +10,6 @@
  * @author Ville Linde
  * @version 1.0
  */
-
-package blockbusters.jukeboksi;
-
-import lejos.hardware.Button;
-import lejos.hardware.Sound;
 
 public class MusicPlayer extends Thread
 {

@@ -1,13 +1,13 @@
+package blockbusters.jukeboksi;
+
+import lejos.hardware.motor.EV3LargeRegulatedMotor;
+import lejos.utility.Delay;
+
 /**
  * Drive-luokka ohjaa robottia.
  * @author Ville Linde
  * @version 1.0
  */
-
-package blockbusters.jukeboksi;
-
-import lejos.hardware.motor.EV3LargeRegulatedMotor;
-import lejos.utility.Delay;
 
 public class Drive {
 

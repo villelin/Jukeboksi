@@ -1,10 +1,10 @@
+package blockbusters.jukeboksi;
+
 /**
  * M‰‰ritt‰‰ "Super Mario Bros - Theme" kappaleen.
  * @author Ville Linde
  * @version 1.0
  */
-
-package blockbusters.jukeboksi;
 
 public class Mario extends MusicTrack {
 	private static final int BEAT = 80;	// biitin pituus = 80 ms

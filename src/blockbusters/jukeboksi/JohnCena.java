@@ -10,7 +10,7 @@ public class JohnCena extends MusicTrack
 {
 	private static final int BEAT = 170;	// biitin pituus = 170 ms
 	
-	public static int[][] notedata =
+	private static int[][] notedata =
 	{
 		{D4,	BEAT-5,		BEAT*2},
 		{G5,	BEAT-5,		BEAT*2},

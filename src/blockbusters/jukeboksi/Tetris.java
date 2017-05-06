@@ -10,7 +10,7 @@ public class Tetris extends MusicTrack
 {
 	private static final int BEAT = 85;		// biitin pituus = 85 ms
 	
-	public static int[][] notedata = 
+	private static int[][] notedata = 
 	{
 		{E6,	BEAT-5,		BEAT*4},
 		{B5,	BEAT-5,		BEAT*2},

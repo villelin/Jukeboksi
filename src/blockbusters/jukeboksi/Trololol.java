@@ -10,7 +10,7 @@ public class Trololol extends MusicTrack
 {
 	private static final int BEAT = 125;	// biitin pituus = 125 ms
 	
-	public static int[][] notedata =
+	private static int[][] notedata =
 	{
 		{E4,	BEAT-5,		BEAT},
 		{G4,	BEAT-5,		BEAT},

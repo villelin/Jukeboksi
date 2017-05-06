@@ -10,7 +10,7 @@ public class EpicSax extends MusicTrack
 {
 	private static final int BEAT = 125;	// biitin pituus = 125 ms
 	
-	public static int[][] notedata =
+	private static int[][] notedata =
 	{
 		{ AS5,	(BEAT*4)-5,	BEAT*8 },
 		{ AS5,	(BEAT*2)-5,	BEAT*2 },

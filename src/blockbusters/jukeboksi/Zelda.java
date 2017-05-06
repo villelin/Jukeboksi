@@ -12,7 +12,7 @@ public class Zelda extends MusicTrack
 	private static final int BEAT_ONEHALF = (int)(BEAT * 1.5);
 	private static final int BEAT_NINEHALF = (int)(BEAT * 9.5);
 	
-	public static int[][] notedata =
+	private static int[][] notedata =
 	{
 		{ F5,		BEAT-5,			BEAT },
 		{ F5,		BEAT-5,			BEAT },

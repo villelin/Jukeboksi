@@ -5,7 +5,7 @@ import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.robotics.Color;
 
 /**
- * DiscReader k‰‰nt‰‰ levy‰ ja palauttaa "lukijan" n‰kem‰n kappaleen numeron. Levyll‰ oleva v‰ri m‰‰ritt‰‰ sit‰ vastaavan kappaleen numeron.
+ * DiscReader k√§√§nt√§√§ levy√§ ja palauttaa "lukijan" n√§kem√§n kappaleen numeron. Levyll√§ oleva v√§ri m√§√§ritt√§√§ sit√§ vastaavan kappaleen numeron.
  * 
  * @author Mikael Anttila
  * @version 1.0
@@ -25,21 +25,21 @@ public class DiscReader {
 	}
 	
 	/**
-	 * K‰‰nt‰‰ levy‰ seuraavan kappaleen kohdalle.
+	 * K√§√§nt√§√§ levy√§ seuraavan kappaleen kohdalle.
 	 */
 	public void nextSong() {
 		discPlayer.rotate(-90);
 	}
 	
 	/**
-	 * K‰‰nt‰‰ levy‰ edellisen kappaleen kohdalle.
+	 * K√§√§nt√§√§ levy√§ edellisen kappaleen kohdalle.
 	 */
 	public void lastSong() {
 		discPlayer.rotate(90);
 	}
 	
 	/**
-	 * Palauttaa lukijan n‰kem‰n kappaleen numeron.
+	 * Palauttaa lukijan n√§kem√§n kappaleen numeron.
 	 * 
 	 * @return Kappaleen numero
 	 */

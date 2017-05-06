@@ -1,7 +1,7 @@
 package blockbusters.jukeboksi;
 
 /**
- * M‰‰ritt‰‰ "John Cena - The time is now" kappaleen.
+ * M√§√§ritt√§√§ "John Cena - The time is now" kappaleen.
  * @author Ville Linde
  * @version 1.0
  */

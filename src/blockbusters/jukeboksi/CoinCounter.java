@@ -5,8 +5,8 @@ import lejos.robotics.Color;
 import lejos.utility.Delay;
 
 /**
- * CoinCounter k‰ytt‰‰ v‰risensoria havaitsemaan kolikon pudotuksen.
- * Luokka pit‰‰ kirjaa k‰ytett‰vist‰ kolikoista (krediiteist‰), sek‰ syˆtetyiden kolikoiden m‰‰r‰st‰.
+ * CoinCounter k√§ytt√§√§ v√§risensoria havaitsemaan kolikon pudotuksen.
+ * Luokka pit√§√§ kirjaa k√§ytett√§vist√§ kolikoista (krediiteist√§), sek√§ sy√∂tettyiden kolikoiden m√§√§r√§st√§.
  * 
  * @author Jonne Leinonen
  * @version 1.0
@@ -24,9 +24,9 @@ public class CoinCounter extends Thread {
 	}
 	
 	/**
-	 * Palauttaa syˆtettyjen kolikoiden m‰‰r‰n.
+	 * Palauttaa sy√∂tettyjen kolikoiden m√§√§r√§n.
 	 * 
-	 * @return Kolikoiden m‰‰r‰
+	 * @return Kolikoiden m√§√§r√§
 	 */
 	public int getCoins () {
 		
@@ -35,9 +35,9 @@ public class CoinCounter extends Thread {
 	}
 	
 	/**
-	 * Palauttaa krediittien m‰‰r‰n.
+	 * Palauttaa krediittien m√§√§r√§n.
 	 * 
-	 * @return Krediittien m‰‰r‰
+	 * @return Krediittien m√§√§r√§
 	 */
 	public int getCredits() {
 
@@ -46,9 +46,9 @@ public class CoinCounter extends Thread {
 	}
 	
 	/**
-	 * K‰ytt‰‰ yhden krediitin, jos k‰ytˆss‰ olevien krediittien m‰‰r‰ on yli nolla.
+	 * K√§ytt√§√§ yhden krediitin, jos k√§yt√∂ss√§ olevien krediittien m√§√§r√§ on yli nolla.
 	 * 
-	 * @return true jos krediittej‰ oli k‰ytett‰viss‰, muuten false
+	 * @return true jos krediittej√§ oli k√§ytett√§viss√§, muuten false
 	 */
 	 public boolean useCredits() {
 		

@@ -1,7 +1,7 @@
 package blockbusters.jukeboksi;
 
 /**
- * M‰‰ritt‰‰ "Sergey Stepanov - Epic Sax Guy" kappaleen.
+ * M√§√§ritt√§√§ "Sergey Stepanov - Epic Sax Guy" kappaleen.
  * @author Ville Linde
  * @version 1.0
  */

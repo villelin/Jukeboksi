@@ -4,8 +4,8 @@ import lejos.hardware.Button;
 import lejos.hardware.sensor.EV3IRSensor;
 
 /**
- * Remote-luokka kuuntelee kaukos‰‰dint‰ kanavilla 1 ja 4 sek‰ n‰pp‰imistˆ‰.
- * Luokka toimii omassa s‰ikeess‰‰n.
+ * Remote-luokka kuuntelee kaukos√§√§dint√§ kanavilla 1 ja 4 sek√§ n√§pp√§imist√∂√§.
+ * Luokka toimii omassa s√§ikeess√§√§n.
  * 
  * @author Joona Ikonen
  * @version 1.0
@@ -23,9 +23,9 @@ public class Remote extends Thread {
 	}
 
 	/**
-	 * Palauttaa t‰m‰nhetkisen painalluksen kaukos‰‰timelt‰ tai n‰pp‰imistˆlt‰
+	 * Palauttaa t√§m√§nhetkisen painalluksen kaukos√§√§timelt√§ tai n√§pp√§imist√∂lt√§
 	 * 
-	 * @return Palauttaa t‰m‰nhetkisen painalluksen
+	 * @return Palauttaa t√§m√§nhetkisen painalluksen
 	 */
 	public int getRemoteCommand() {
 
@@ -33,8 +33,8 @@ public class Remote extends Thread {
 	}
 
 	/**
-	 * Kuuntelee jatkuvasti kaukos‰‰timen kanavia 1 ja 4 sek‰ n‰pp‰imistˆ‰.
-	 * P‰ivitt‰‰ muuttujan remotelast arvoa painalluksen mukaan.
+	 * Kuuntelee jatkuvasti kaukos√§√§timen kanavia 1 ja 4 sek√§ n√§pp√§imist√∂√§.
+	 * P√§ivitt√§√§ muuttujan remotelast arvoa painalluksen mukaan.
 	 */
 	public void run() {
 		while (true) {

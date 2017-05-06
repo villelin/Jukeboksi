@@ -1,7 +1,7 @@
 package blockbusters.jukeboksi;
 
 /**
- * M‰‰ritt‰‰ "Korobeiniki (Russian Folk Song)" kappaleen.
+ * M√§√§ritt√§√§ "Korobeiniki (Russian Folk Song)" kappaleen.
  * @author Ville Linde
  * @version 1.0
  */

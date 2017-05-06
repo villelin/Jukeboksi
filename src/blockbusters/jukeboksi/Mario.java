@@ -1,7 +1,7 @@
 package blockbusters.jukeboksi;
 
 /**
- * M‰‰ritt‰‰ "Super Mario Bros - Theme" kappaleen.
+ * M√§√§ritt√§√§ "Super Mario Bros - Theme" kappaleen.
  * @author Ville Linde
  * @version 1.0
  */

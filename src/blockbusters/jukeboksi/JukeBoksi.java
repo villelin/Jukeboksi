@@ -9,7 +9,7 @@ import lejos.hardware.sensor.EV3IRSensor;
 import lejos.utility.Delay;
 
 /**
- * Jukeboksi toimii viestinv‰litt‰j‰n‰ ja yhdist‰‰ muut luokat.
+ * Jukeboksi toimii viestinv√§litt√§j√§n√§ ja yhdist√§√§ muut luokat.
  * 
  * @author Joona Ikonen
  * @version 1.0
@@ -46,7 +46,7 @@ public class JukeBoksi {
 	}
 
 	/**
-	 * Jukeboksin syd‰n. K‰sittelee saapuvat komennot ja hallitsee muita luokkia
+	 * Jukeboksin syd√§n. K√§sittelee saapuvat komennot ja hallitsee muita luokkia
 	 */
 	public void Player() {
 
@@ -83,7 +83,7 @@ public class JukeBoksi {
 			case 2: // Remote bottomleft
 				music.decVolume(20);
 				break;
-			case 3: // Remote topright, musiikin pys‰ytys
+			case 3: // Remote topright, musiikin pys√§ytys
 				music.stopPlaying();
 				break;
 			case 4: // Remote bottomright, saldo
@@ -155,11 +155,11 @@ public class JukeBoksi {
 				driver.stop();
 				break;
 			case 13: // Remotedrive topleft + topright
-				// driver.drive ETEENPƒIN?
+				// driver.drive ETEENP√ÑIN?
 				driver.forward();
 				break;
 			case 14: // Remotedrive bottomledt + bottomright
-				// driver.drive TAAKSEPƒIN?
+				// driver.drive TAAKSEP√ÑIN?
 				break;
 			}
 			Delay.msDelay(50);

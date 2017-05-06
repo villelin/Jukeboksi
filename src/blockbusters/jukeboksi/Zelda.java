@@ -1,7 +1,7 @@
 package blockbusters.jukeboksi;
 
 /**
- * M‰‰ritt‰‰ "The Legend of Zelda - Overworld" kappaleen.
+ * M√§√§ritt√§√§ "The Legend of Zelda - Overworld" kappaleen.
  * @author Ville Linde
  * @version 1.0
  */

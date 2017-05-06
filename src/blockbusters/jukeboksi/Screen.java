@@ -3,7 +3,7 @@ package blockbusters.jukeboksi;
 import lejos.hardware.lcd.LCD;
 
 /**
- * Screen-luokka hallitsee ainoana luokkana n‰ytˆlle kirjoitettavaa teksti‰.
+ * Screen-luokka hallitsee ainoana luokkana n√§yt√∂lle kirjoitettavaa teksti√§.
  * 
  * @author Joona Ikonen
  * @version 1.0
@@ -12,7 +12,7 @@ import lejos.hardware.lcd.LCD;
 public class Screen {
 
 	/**
-	 * Piirret‰‰n n‰ytˆlle nyt soivan kappaleen tiedot.
+	 * Piirret√§√§n n√§yt√∂lle nyt soivan kappaleen tiedot.
 	 * 
 	 * @param artistName
 	 * @param songName
@@ -26,7 +26,7 @@ public class Screen {
 	}
 
 	/**
-	 * Piirret‰‰n n‰ytˆlle valittavan kappaleen tiedot.
+	 * Piirret√§√§n n√§yt√∂lle valittavan kappaleen tiedot.
 	 * 
 	 * @param artistName
 	 * @param songName
@@ -39,7 +39,7 @@ public class Screen {
 	}
 
 	/**
-	 * Piirret‰‰n n‰ytˆlle ilmoitus krediittien m‰‰r‰n ollessa 0.
+	 * Piirret√§√§n n√§yt√∂lle ilmoitus krediittien m√§√§r√§n ollessa 0.
 	 */
 	public void noCredits() {
 		LCD.clear();
@@ -49,7 +49,7 @@ public class Screen {
 	}
 
 	/**
-	 * Piirret‰‰n n‰ytˆlle t‰m‰nhetkinen krediittitilanne.
+	 * Piirret√§√§n n√§yt√∂lle t√§m√§nhetkinen krediittitilanne.
 	 * 
 	 * @param creditCount
 	 */
@@ -59,7 +59,7 @@ public class Screen {
 	}
 
 	/**
-	 * Piirret‰‰n n‰ytˆlle koneessa olevien kolikkojen m‰‰r‰.
+	 * Piirret√§√§n n√§yt√∂lle koneessa olevien kolikkojen m√§√§r√§.
 	 * 
 	 * @param coinCount
 	 */

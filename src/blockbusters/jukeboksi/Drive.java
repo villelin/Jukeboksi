@@ -25,7 +25,7 @@ public class Drive {
 	}
 	
 	/**
-	 * Aloittaa liikuttamaan robottia eteenp‰in.
+	 * Aloittaa liikuttamaan robottia eteenp√§in.
 	 */
 	public void forward()
 	{
@@ -34,7 +34,7 @@ public class Drive {
 	}
 	
 	/**
-	 * Aloittaa liikuttamaan robottia taaksep‰in.
+	 * Aloittaa liikuttamaan robottia taaksep√§in.
 	 */
 	public void backward()
 	{
@@ -43,7 +43,7 @@ public class Drive {
 	}
 	
 	/**
-	 * Aloittaa k‰‰nt‰m‰‰n robottia vasemmalle.
+	 * Aloittaa k√§√§nt√§m√§√§n robottia vasemmalle.
 	 */
 	public void turnLeft()
 	{
@@ -52,7 +52,7 @@ public class Drive {
 	}
 	
 	/**
-	 * Aloittaa k‰‰nt‰m‰‰n robottia oikealle.
+	 * Aloittaa k√§√§nt√§m√§√§n robottia oikealle.
 	 */
 	public void turnRight()
 	{
@@ -61,7 +61,7 @@ public class Drive {
 	}
 	
 	/**
-	 * Pys‰ytt‰‰ robotin.
+	 * Pys√§ytt√§√§ robotin.
 	 */
 	public void stop()
 	{

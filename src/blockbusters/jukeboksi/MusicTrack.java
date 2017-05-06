@@ -1,7 +1,7 @@
 package blockbusters.jukeboksi;
 
 /**
- * MusicTrack on abstrakti luokka, joka m‰‰ritt‰‰ musiikkikappaleen.
+ * MusicTrack on abstrakti luokka, joka m√§√§ritt√§√§ musiikkikappaleen.
  * 
  * @author Ville Linde
  * @version 1.0
@@ -124,9 +124,9 @@ public abstract class MusicTrack
 	}
 	
 	/**
-	 * Palauttaa kappaleen esitt‰j‰n
+	 * Palauttaa kappaleen esitt√§j√§n
 	 * 
-	 * @return Kappaleen esitt‰j‰
+	 * @return Kappaleen esitt√§j√§
 	 */
 	public String getArtistName()
 	{

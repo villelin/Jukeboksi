@@ -4,8 +4,8 @@ import lejos.hardware.Button;
 import lejos.hardware.Sound;
 
 /**
- * MusicPlayer soittaa MusicTrack-luokkien m‰‰rittelem‰‰ nuottidataa.
- * Luokka pyˆrii omassa s‰ikeess‰‰n.
+ * MusicPlayer soittaa MusicTrack-luokkien m√§√§rittelem√§√§ nuottidataa.
+ * Luokka py√∂rii omassa s√§ikeess√§√§n.
  * 
  * @author Ville Linde
  * @version 1.0
@@ -79,7 +79,7 @@ public class MusicPlayer extends Thread
 	}
 	
 	/**
-	 * Nostaa ‰‰nenvoimakkuutta. Jos voimakkuus on jo 100, voimakkuus ei muutu.
+	 * Nostaa √§√§nenvoimakkuutta. Jos voimakkuus on jo 100, voimakkuus ei muutu.
 	 */
 	public void incVolume(int amount)
 	{
@@ -90,7 +90,7 @@ public class MusicPlayer extends Thread
 	}
 	
 	/**
-	 * Pienent‰‰ ‰‰nenvoimakkuutta. Jos voimakkuus on 0, voimakkuus ei muutu. 
+	 * Pienent√§√§ √§√§nenvoimakkuutta. Jos voimakkuus on 0, voimakkuus ei muutu. 
 	 */
 	public void decVolume(int amount)
 	{
@@ -101,7 +101,7 @@ public class MusicPlayer extends Thread
 	}
 	
 	/**
-	 * Palauttaa t‰ll‰ hetkell‰ valitun kappaleen nimen
+	 * Palauttaa t√§ll√§ hetkell√§ valitun kappaleen nimen
 	 * 
 	 * @return Kappaleen nimi
 	 */
@@ -114,9 +114,9 @@ public class MusicPlayer extends Thread
 	}
 	
 	/**
-	 * Palauttaa t‰ll‰ hetkell‰ valitun kappaleen esitt‰j‰n
+	 * Palauttaa t√§ll√§ hetkell√§ valitun kappaleen esitt√§j√§n
 	 * 
-	 * @return Kappaleen esitt‰j‰
+	 * @return Kappaleen esitt√§j√§
 	 */
 	public String getArtistName()
 	{

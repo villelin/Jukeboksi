@@ -17,23 +17,71 @@ import lejos.utility.Delay;
 
 public class JukeBoksi {
 
+	/**
+	 * IR-sensori kaukosäätimen lukemista varten.
+	 */
 	private EV3IRSensor irSensor = new EV3IRSensor(SensorPort.S3);
+	/**
+	 * Värisensori levyn lukemista varten.
+	 */
 	private EV3ColorSensor discReader = new EV3ColorSensor(SensorPort.S4);
+	/**
+	 * Värisensori kolikontunnistamiseen.
+	 */
 	private EV3ColorSensor coinSensor = new EV3ColorSensor(SensorPort.S2);
+	/**
+	 * Vasen ajomoottori.
+	 */
 	private EV3LargeRegulatedMotor leftMotor = new EV3LargeRegulatedMotor(MotorPort.B);
+	/**
+	 * Oikea ajomoottori.
+	 */
 	private EV3LargeRegulatedMotor rightMotor = new EV3LargeRegulatedMotor(MotorPort.C);
+	/**
+	 * Levyä pyörittävä moottori.
+	 */
 	private EV3MediumRegulatedMotor discMotor = new EV3MediumRegulatedMotor(MotorPort.D);
 
+	/**
+	 * Kolikoiden määrä jukeboksissa.
+	 */
 	private int coinCount;
+	/**
+	 * Krediittien määrä jukeboksissa.
+	 */
 	private int creditCount;
+	/**
+	 * Kappaleen nimi.
+	 */
 	private String songName;
+	/**
+	 * Kappaleen artisti.
+	 */
 	private String songArtist;
 
+	/**
+	 * Screen-luokan olio näytön hallintaa varten.
+	 */
 	private Screen screen;
+	/**
+	 * Remote-luokan olio käyttäjän komentoja varten.
+	 */
 	private Remote remote;
+	/**
+	 * MusicPlayer-luokan olio musiikintoistoa varten.
+	 */
 	private MusicPlayer music;
+	/**
+	 * CoinCounter-luokan olio kolikko- ja krediittilaskentaan.
+	 */
 	private CoinCounter coin;
+	/**
+	 * DiscReader-luokan olio levyn pyörittämistä varten.
+	 */
 	private DiscReader discPlayer;
+	/**
+	 * Drive-luokan olio ajomoottoreiden hallintaa varten.
+	 */
 	private Drive driver;
 
 	public JukeBoksi() {
@@ -70,18 +118,18 @@ public class JukeBoksi {
 		while (start) {
 
 			creditCount = coin.getCredits();
-			if (creditChange != creditCount) {
+			if (creditChange != creditCount) { //onko krediittitilanne muuttunut
 				creditChange = creditCount;
 
-				if (lastPage == 1) {
+				if (lastPage == 1) { //Jos kappale ei ole soimassa
 					screen.songSelect(songArtist, songName);
 					screen.creditAmount(creditCount);
-				} else {
+				} else {				// // Jos kappale soi
 					screen.songPlaying(songArtist, songName);
 					screen.creditAmount(creditCount);
 				}
 			}
-			if (!music.isPlaying()){
+			if (!music.isPlaying()){ // palataan biisinvalintaruutuun, jos musiikki ei soi
 				screen.songSelect(songArtist, songName);
 				screen.creditAmount(creditCount);
 			}
@@ -150,27 +198,21 @@ public class JukeBoksi {
 				start = false;
 				break;
 			case 9: // Remotedrive topleft
-				// driver.driveleftmotor
 				driver.turnLeft();
 				break;
 			case 10: // Remotedrive bottomleft
-				// driver.driverightmotor
 				driver.backward();
 				break;
 			case 11: // Remotedrive topright
-				// driver.drive JOTAIN
 				driver.turnRight();
 				break;
 			case 12: // Remotedrive bottomright
-				// driver.drive JOTAIN
 				driver.stop();
 				break;
 			case 13: // Remotedrive topleft + topright
-				// driver.drive ETEENPÃ„IN?
 				driver.forward();
 				break;
-			case 14: // Remotedrive bottomledt + bottomright
-				// driver.drive TAAKSEPÃ„IN?
+			case 14: // Remotedrive bottomleft + bottomright
 				break;
 			}
 			Delay.msDelay(50);

@@ -60,6 +60,10 @@ public class JukeBoksi {
 		int lastPage = 1;
 		int creditChange = creditCount;
 
+		songArtist = music.getArtistName();
+		songName = music.getSongName();
+		creditCount = coin.getCredits();
+			
 		screen.songSelect(songArtist, songName);
 		screen.creditAmount(creditCount);
 
@@ -71,10 +75,17 @@ public class JukeBoksi {
 
 				if (lastPage == 1) {
 					screen.songSelect(songArtist, songName);
+					screen.creditAmount(creditCount);
 				} else {
 					screen.songPlaying(songArtist, songName);
+					screen.creditAmount(creditCount);
 				}
 			}
+			if (!music.isPlaying()){
+				screen.songSelect(songArtist, songName);
+				screen.creditAmount(creditCount);
+			}
+			
 
 			switch (remote.getRemoteCommand()) {
 			case 1: // Remote topleft

@@ -66,7 +66,7 @@ public class CoinCounter extends Thread {
 		while (true) {
 			
 			try {
-				sleep (50);
+				sleep (25);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				return;

@@ -67,7 +67,7 @@ public class MusicPlayer extends Thread
 	 * 
 	 * @param song Soitettavan kappaleen indeksi
 	 */
-	public void changeSong(int song)
+	public synchronized void changeSong(int song)
 	{
 		if (song >= 0 && song < songs.length)
 		{

@@ -9,6 +9,9 @@ package blockbusters.jukeboksi;
 
 public abstract class MusicTrack
 {
+	/**
+	 * Nuottien äänentaajuuksien vakiot
+	 */
 	protected static final int C3 = 131;
 	protected static final int CS3 = 139;
 	protected static final int D3 = 147;
@@ -58,11 +61,29 @@ public abstract class MusicTrack
 	protected static final int AS6 = 1864;
 	protected static final int C7 = 2093;
 	
+	/**
+	 * Seuraavaksi luettava nuotti
+	 */
 	protected int current_note;
+	
+	/**
+	 * Musiikkikappaleen nimi
+	 */
 	protected String song_name;
+	
+	/**
+	 * Musiikkikappaleen esittäjä
+	 */
 	protected String artist_name;
+	
+	/**
+	 * Montako kertaa musiikkikappale toistetaan
+	 */
 	protected int num_loops;
 	
+	/**
+	 * Taulukko nuottitietoihin
+	 */
 	protected int[][] notes;
 	
 	public MusicTrack()

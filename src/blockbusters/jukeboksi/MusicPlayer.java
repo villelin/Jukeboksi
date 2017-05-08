@@ -13,10 +13,24 @@ import lejos.hardware.Sound;
 
 public class MusicPlayer extends Thread
 {
+	/**
+	 * Taulukko käytössä olevista MusicTrack-tyyppisistä kappaleista
+	 */
 	private MusicTrack[] songs;
+	
+	/**
+	 * Tällä hetkellä valittu MusicTrack-kappale
+	 */
 	private MusicTrack current_song;
 	
+	/**
+	 * Boolean-arvo joka kertoo onko kappaleen soitto käynnissä
+	 */
 	private boolean playing;
+	
+	/**
+	 * Musiikin äänenvoimakkuus
+	 */
 	private int volume;
 	
 	public MusicPlayer()
@@ -80,6 +94,8 @@ public class MusicPlayer extends Thread
 	
 	/**
 	 * Nostaa äänenvoimakkuutta. Jos voimakkuus on jo 100, voimakkuus ei muutu.
+	 * 
+	 * @param Paljonko voimakkuutta kasvatetaan
 	 */
 	public void incVolume(int amount)
 	{
@@ -90,7 +106,9 @@ public class MusicPlayer extends Thread
 	}
 	
 	/**
-	 * Pienentää äänenvoimakkuutta. Jos voimakkuus on 0, voimakkuus ei muutu. 
+	 * Pienentää äänenvoimakkuutta. Jos voimakkuus on 0, voimakkuus ei muutu.
+	 * 
+	 * @param Paljonko voimakkuuttaa pienennetään
 	 */
 	public void decVolume(int amount)
 	{
@@ -137,7 +155,8 @@ public class MusicPlayer extends Thread
 		
 		while (true)
 		{
-			try {
+			try
+			{
 				if (playing)
 				{
 					int[] notedata = current_song.getNote();

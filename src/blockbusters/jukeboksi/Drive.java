@@ -11,7 +11,14 @@ import lejos.utility.Delay;
 
 public class Drive {
 
+	/**
+	 * leJOS-rajapinnan iso moottori
+	 */
 	private EV3LargeRegulatedMotor leftMotor;
+	
+	/**
+	 * leJOS-rajapinnan iso moottori
+	 */
 	private EV3LargeRegulatedMotor rightMotor;
 	
 	public Drive(EV3LargeRegulatedMotor left, EV3LargeRegulatedMotor right){
